@@ -7,9 +7,9 @@ class Graph:
         self.m_graph = [[0 for column in range(num_of_nodes)] 
                     for row in range(num_of_nodes)]
 
-    def add_edge(self, node1, node2, weight):
-        self.m_graph[node1][node2] = weight
-        self.m_graph[node2][node1] = weight
+    def add_edge(self, node1, node2, weight): # This function is used to reduce the number of road
+        self.m_graph[node1][node2] = weight # A to B = 4
+        self.m_graph[node2][node1] = weight # B to A = 4
         
       
       

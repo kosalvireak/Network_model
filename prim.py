@@ -28,17 +28,17 @@ class Graph:
         # we store our MST result here
         result = [[0 for column in range(self.m_num_of_nodes)] 
                     for row in range(self.m_num_of_nodes)]
-        print(" A, B, C, D, E, F, G, H, I \n")
+        # print the graph out
         indx = 0
         for i in range(self.m_num_of_nodes):
             print(self.m_graph[i])
-        
+        # print False 
         print(selected_nodes)
        
 
-        # While there are nodes that are not included in the MST, keep looking:
+        # while loop check the nodes that haven't choose
         while(False in selected_nodes):
-            # We use the big number we created before as the possible minimum weight
+            # assign the biggest value to minimum
             minimum = postitive_inf
 
             # The starting node
@@ -48,7 +48,7 @@ class Graph:
             end = 0
 
             for i in range(self.m_num_of_nodes):
-                # If the node is part of the MST, look its relationships
+                
                 if selected_nodes[i]:
                     for j in range(self.m_num_of_nodes):
                         # If the analyzed node have a path to the ending node AND its not included in the MST (to avoid cycles)
@@ -58,7 +58,7 @@ class Graph:
                                 # Defines the new minimum weight, the starting vertex and the ending vertex
                                 minimum = self.m_graph[i][j]
                                 start, end = i, j
-            
+   
             # Since we added the ending vertex to the MST, it's already selected:
             selected_nodes[end] = True
 
@@ -68,7 +68,7 @@ class Graph:
             if minimum == postitive_inf:
                 result[start][end] = 0
 
-            print("(%d.) %d - %d: %d" % (indx, start, end, result[start][end]))
+            #print("(%d.) %d - %d: %d" % (indx, start, end, result[start][end]))
             indx += 1
             
             result[end][start] = result[start][end]

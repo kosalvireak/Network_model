@@ -1,5 +1,5 @@
 # https://stackabuse.com/courses/graphs-in-python-theory-and-implementation/lessons/minimum-spanning-trees-boruvkas-algorithm/#borvkasalgorithm
-# class Graph:
+class Graph:
     def __init__(self, num_of_nodes):
         self.m_v = num_of_nodes
         self.m_edges = []

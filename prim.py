@@ -1,29 +1,31 @@
 # https://stackabuse.com/courses/graphs-in-python-theory-and-implementation/lessons/minimum-spanning-trees-prims-algorithm/#whatisaminimumspanningtree
-print(" A, B, C, D, E, F, G, H, I \n")
-class Graph:
-    def __init__(self, num_of_nodes):
+
+#create a class name Graph
+class Graph: 
+    #this is constructor
+    def __init__(self, num_of_nodes): 
         self.m_num_of_nodes = num_of_nodes
-        # Initialize the adjacency matrix with zeros
+        # create an empty adjacecy matrix with the nodes of 9 and all value equal to 0
         self.m_graph = [[0 for column in range(num_of_nodes)] 
                     for row in range(num_of_nodes)]
-
-    def add_edge(self, node1, node2, weight): # This function is used to reduce the number of road
+    #this is method ,used to reduce the number of edge, 
+    def add_edge(self, node1, node2, weight): 
         self.m_graph[node1][node2] = weight # A to B = 4
-        self.m_graph[node2][node1] = weight # B to A = 4
+        self.m_graph[node2][node1] = weight # B to A = 4 
         
       
+            
       
-      
-      
+    #this is method
     def prims_mst(self):
-        # Defining a really big number, that'll always be the highest weight in comparisons
+        # we create a large number, so that edge alwasy lesser when compare
+        # flaot('inf') is mean to set the value to infinitive
         postitive_inf = float('inf')
 
-        # This is a list showing which nodes are already selected 
-        # so we don't pick the same node twice and we can actually know when stop looking
+        # we use this to check whether nodes are chosen or not
         selected_nodes = [False for node in range(self.m_num_of_nodes)]
 
-        # Matrix of the resulting MST
+        # we store our MST result here
         result = [[0 for column in range(self.m_num_of_nodes)] 
                     for row in range(self.m_num_of_nodes)]
         print(" A, B, C, D, E, F, G, H, I \n")
@@ -86,6 +88,7 @@ class Graph:
 example_graph = Graph(9)
                 
 example_graph.add_edge(0, 1, 4)
+example_graph.add_edge(1, 0, 4)
 example_graph.add_edge(0, 2, 7)
 example_graph.add_edge(1, 2, 11)
 example_graph.add_edge(1, 3, 9)

@@ -1,1 +1,15 @@
 file:///C:/Users/U-ser/Pictures/Scanned%20Document%206.pdf
+algorithm>>
+create a list of nodes and its supply/demand
+create a list of connection between node 1 by 1, EX: 1>2 = 30, 1>4 = 40
+start by demand node
+    find the nearest node wih the lowest cost
+    send the goods to fullfil that node
+    next: find the second cheap node and send to goods to that node
+    delete received nodes from above list
+check the remain nodes in list
+compare the distance between remained node and supplier
+take the remain goods in the closest supplier to fullfil that node
+    if the node still need more goods, take from the second closest supplier
+
+

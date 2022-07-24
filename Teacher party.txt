@@ -1,0 +1,14 @@
+Create a list of nodes(place to meet and the teacher's house)
+for teacher's house make it into the main node 
+Create a list of arcs EX: 1-2: 2 , 1-4: 6, 2-5: 7
+code run every node in list but one fist, next loop choose next node
+    the loop will start from first teacher's house
+        code will find the way to connect teacher's house to selected node. 
+        EX: selected node is number 5, 1-2 : 4, 1-4: 3 , 4-5: 2 , so weight is 1-4 & 4-5 = 5
+        return the smallest value
+        change the first teacher to second teacher, do this until all are done
+    return the smallest weight of each loop
+
+
+
+

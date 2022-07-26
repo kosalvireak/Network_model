@@ -1,0 +1,9 @@
+Create a list of node, which has start(Oil Filed) and end node(Refinery)
+Create a list of nodes EX: 0>1 = 6, 0>4 = 4, 1>3 = 3, 1>4 = 2
+For start node go to all the node that connected.
+Then for normal node, 
+  if the in weight is bigger then out weight
+    connected to all those node and send all the weight
+  else if in weight is smaller then out weight
+    
+

@@ -5,5 +5,12 @@ Then for normal node,
   if the in weight is bigger then out weight
     connected to all those node and send all the weight
   else if in weight is smaller then out weight
+    connected to all those node and send all weight to the smallest one and the remain weight to the biggest one
+sum the received weight for the 3rd and 4th node
+    send  to the end node
+         if the in weight is bigger then out weight
+              send out weight
+         else if in weight is smaller then out weight.  
+              send in weight
     
 

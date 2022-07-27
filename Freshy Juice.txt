@@ -1,11 +1,49 @@
-create a list of start and destination nodes. EX:BTB>SR = 21, BTB>K-Cham = 50, BTB>PP = 40
-Begin by first start node, than next start node
-choose the cheepest arc than the second cheapest arc
-  compare supply and capacity
-    if supply more than capacity 
-        send to fullfit capacity.
-    else if supply lesson than capacity 
-        send all the supply
-    deduct the capacity by the number that we sent
-    multiply that to the weight of arc and store in a new Total variable
-Return the Total variable
+Algorithm                                                           Test
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+create a list of start and destination nodes.                       EX:BTB>SR = 21, BTB>K-Cham = 50, BTB>PP = 40
+Begin by 1st nodes                                                  BTB, next loop K-Thom, next loop Pursat
+choose the cheapest arc than the second cheapest arc                21<40<50, thus we choose BTB>SR             40<50 thus we choose BTB>PP
+  compare supply and capacity                                       BTB supply = 275, SR capacity = 200         BTB supply = 75, PP capacity = 225
+    if supply more than capacity                                    Yes: 275 > 200                              No
+        send to fullfil capacity.                                   send 200
+        multiply send amount and price, assign to a Total           Total =200*21 = 4200                            
+    else if supply less   than capacity                             No                                          Yes: 75 < 200
+        send all the supply                                                                                     send 75
+        multiply send amount and price, assign to a Total                                                       Total=75*40 = 3000  
+    deduct the supply by the number that we sent                    275 - 200 = 75                              75 - 75 = 0
+    deduct the capacity by the number that we sent                  200 - 200 = 0                               225 - 75 = 150
+    if supply = 0 go to 2nd node                                    supply = 75                                 supply = 0 go to 2nd node
+    if no more node than end                            
+Return Total
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Begin by 2nd nodes                                                  K-Thom
+choose the cheapest arc than the second cheapest arc                22<30<35, thus we choose K-Thom>PP          30<35 thus we choose K-Thom>K-Cham
+  compare supply and capacity                                       K-Thom supply = 400, PP capacity = 150      K-Thom supply = 250, K-Cham capacity = 600
+    if supply more than capacity                                    Yes: 400 > 150                              No
+        send to fullfil capacity.                                   send 400
+        multiply send amount and price, assign to a Total           Total =150*22 = 3300                            
+    else if supply less   than capacity                             No                                          Yes: 250 < 600
+        send all the supply                                                                                     send 250
+        multiply send amount and price, assign to a Total                                                       Total=250*30 = 7500  
+    deduct the supply by the number that we sent                    400 - 150 = 250                             250 - 250 = 0
+    deduct the capacity by the number that we sent                  150 - 150 = 0                               600 - 250 = 350
+    if supply = 0 go to 3rd node                                    supply = 250                                supply = 0 go to 3rd node
+    if no more node than end                            
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Begin by 3rd nodes                                                  Pursat
+choose the cheapest arc than the second cheapest arc                21<40<50, thus we choose Pursat > K-Cham             
+  compare supply and capacity                                       Pursat supply = 300, K-Cham capacity = 350      
+    if supply more than capacity                                    No                           
+        send to fullfil capacity.                                   
+        multiply send amount and price, assign to a Total                                      
+    else if supply less than capacity                               Yes: 300 < 350                       
+        send all the supply                                         send 300                                          
+        multiply send amount and price, assign to a Total           Total =300*20 = 6000                                        
+    deduct the supply by the number that we sent                    300 - 300 = 0                             
+    deduct the capacity by the number that we sent                  350 - 300 = 50                             
+    if supply = 0 go to end                                         supply = 0 go to 4th node                                
+    if no more node than end                                        Yes: End
+Return Total                                                        Total = 4200 + 3000 + 3300 + 7500 + 6000 = 24000

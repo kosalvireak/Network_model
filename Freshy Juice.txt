@@ -1,0 +1,11 @@
+create a list of start and destination nodes. EX:BTB>SR = 21, BTB>K-Cham = 50, BTB>PP = 40
+Begin by first start node, than next start node
+choose the cheepest arc than the second cheapest arc
+  compare supply and capacity
+    if supply more than capacity 
+        send to fullfit capacity.
+    else if supply lesson than capacity 
+        send all the supply
+    deduct the capacity by the number that we sent
+    multiply that to the weight of arc and store in a new Total variable
+Return the Total variable

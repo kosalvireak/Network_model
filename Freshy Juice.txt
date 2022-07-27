@@ -1,0 +1,1 @@
+create a list of start and destination nodes. EX:BTB>SR = 21, BTB>K-Cham = 50, BTB>PP = 40

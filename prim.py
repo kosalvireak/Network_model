@@ -57,29 +57,42 @@ class Graph:
 
             # The ending node
             end = 0
-            # loop run from 0 to 8
+            # loop run from 0 to 8 since m_num_of_nodes = 9
             for i in range(self.m_num_of_nodes):
-
-                if selected_nodes[i]:
+                # if node has been select it will go into that loop
+                #for the first try there is no selected node since it all false 
+                # code will hop to the selected_nodes[end] = True to make a node true, end = 0 so node0 will become True
+                if selected_nodes[i]: #second run code already True so it enter the loop
+                    #we run j from 0 to , but this j loop stay under i loop so, i=0 and j start run from 0 >8
+                    #this make sure that we go to all element⁡
                     for j in range(self.m_num_of_nodes):
-                        # If the analyzed node have a path to the ending node AND its not included in the MST (to avoid cycles)
+                        # selected_node[0] = True// m_graph[0][0] = 0,by doing this we take only node that false cus not false oi true and we go into loop
+                        # selected_node[1] = false, not sele = true // m_graph[0][1] = 4>0 --> go into loop
+                        # selected_node[2] = false, not sele = true // m_graph[0][2] = 7>0 --> go into loop
+                        # selected_node[3] & [4] = false, not sele = true // m_graph[0][3] & [0][4] = 0 
+                        # selected_node[5] = false, not sele = true // m_graph[0][5] = 20>0 --> go into loop
+
+
                         if (not selected_nodes[j] and self.m_graph[i][j] > 0):
-                            # If the weight path analyzed is less than the minimum of the MST
+                            # m_graph [0][0] = 4 < minimum = inf
+                            # m_graph [0][2] = 7 !< minimum = 4
+                            # m_graph [0][5] = 20 !< minimum = 4
                             if self.m_graph[i][j] < minimum:
-                                # Defines the new minimum weight, the starting vertex and the ending vertex
+                                # change minimun to 4 which be long to m_graph[0][1]
                                 minimum = self.m_graph[i][j]
+                                #start 0, end 1
                                 start, end = i, j
 
-            # Since we added the ending vertex to the MST, it's already selected:
+        
             selected_nodes[end] = True
 
-            # Filling the MST Adjacency Matrix fields:
+            #assign the [0][0] to infinitive
             result[start][end] = minimum
 
             if minimum == postitive_inf:
                 result[start][end] = 0
 
-            #print("(%d.) %d - %d: %d" % (index, start, end, result[start][end]))
+            #increase index
             index += 1
 
             result[end][start] = result[start][end]

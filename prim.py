@@ -57,7 +57,7 @@ class Graph:
 
             # The ending node
             end = 0
-
+            # loop run from 0 to 8
             for i in range(self.m_num_of_nodes):
 
                 if selected_nodes[i]:

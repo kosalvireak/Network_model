@@ -37,7 +37,7 @@ class Graph:
         # 8 : False
         selected_nodes = [False for node in range(self.m_num_of_nodes)]
 
-        # we store our MST result here
+        # we store our MST result here⁡
         result = [[0 for column in range(self.m_num_of_nodes)]
                   for row in range(self.m_num_of_nodes)]
         # print the graph out
@@ -48,6 +48,7 @@ class Graph:
         print(selected_nodes)
 
         # Loop end when all the node aren't False
+        
         while(False in selected_nodes):
             # assign the biggest value to minimum
             minimum = postitive_inf
@@ -58,6 +59,7 @@ class Graph:
             # The ending node
             end = 0
             # loop run from 0 to 8 since m_num_of_nodes = 9
+
             for i in range(self.m_num_of_nodes):
                 # if node has been select it will go into that loop
                 #for the first try there is no selected node since it all false 
@@ -66,7 +68,7 @@ class Graph:
                     #we run j from 0 to , but this j loop stay under i loop so, i=0 and j start run from 0 >8
                     #this make sure that we go to all element⁡
                     for j in range(self.m_num_of_nodes):
-                        # selected_node[0] = True// m_graph[0][0] = 0,by doing this we take only node that false cus not false oi true and we go into loop
+                        # selected_node[0] = True// m_graph[0][0] = 0,by doing this we take only node that is false, cus the true node is itself node0 and node0
                         # selected_node[1] = false, not sele = true // m_graph[0][1] = 4>0 --> go into loop
                         # selected_node[2] = false, not sele = true // m_graph[0][2] = 7>0 --> go into loop
                         # selected_node[3] & [4] = false, not sele = true // m_graph[0][3] & [0][4] = 0 
@@ -83,10 +85,13 @@ class Graph:
                                 #start 0, end 1
                                 start, end = i, j
 
-        
+            #selected_nodes[0] = True
+            #after for loop end go to another node, we choose end cus, it is child node 0-1 , 0 is parent, 1 is child
+            #selected_nodes[1] = True
             selected_nodes[end] = True
 
             #assign the [0][0] to infinitive
+            #assign the [0][1] to 4
             result[start][end] = minimum
 
             if minimum == postitive_inf:
@@ -101,6 +106,7 @@ class Graph:
         # for node1, node2, weight in result:
         for i in range(len(result)):
             for j in range(0+i, len(result)):
+                # we don't take any value which equal to 0
                 if result[i][j] != 0:
                     print("%d - %d: %d" % (i, j, result[i][j]))
 

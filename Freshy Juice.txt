@@ -16,7 +16,6 @@ choose the cheapest arc than the second cheapest arc                21<40<50, th
     if no more node than end                            
 Return Total
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 Begin by 2nd nodes                                                  K-Thom
 choose the cheapest arc than the second cheapest arc                22<30<35, thus we choose K-Thom>PP          30<35 thus we choose K-Thom>K-Cham
   compare supply and capacity                                       K-Thom supply = 400, PP capacity = 150      K-Thom supply = 250, K-Cham capacity = 600
@@ -30,9 +29,7 @@ choose the cheapest arc than the second cheapest arc                22<30<35, th
     deduct the capacity by the number that we sent                  150 - 150 = 0                               600 - 250 = 350
     if supply = 0 go to 3rd node                                    supply = 250                                supply = 0 go to 3rd node
     if no more node than end                            
-
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 Begin by 3rd nodes                                                  Pursat
 choose the cheapest arc than the second cheapest arc                21<40<50, thus we choose Pursat > K-Cham             
   compare supply and capacity                                       Pursat supply = 300, K-Cham capacity = 350      
@@ -47,3 +44,11 @@ choose the cheapest arc than the second cheapest arc                21<40<50, th
     if supply = 0 go to end                                         supply = 0 go to 4th node                                
     if no more node than end                                        Yes: End
 Return Total                                                        Total = 4200 + 3000 + 3300 + 7500 + 6000 = 24000
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Algorithm for Freshy Juice
+1. start by the first supplier
+2. connect to the cheapest node and send to fullfil the demand or all the supply
+3. if supply still has, go to step 2 and change to the second cheapest node, else go to step 2 and change to the second supplier
+4. if all supply = 0, end

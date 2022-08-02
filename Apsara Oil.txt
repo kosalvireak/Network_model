@@ -21,4 +21,7 @@ sum the received value for the 3rd and 4th node             node3 = 3 + 2 = 5
 
 
 Algorithm for Apsara Oil.
-1. 
+1. start from the first node
+2. connect to the cheapest node first and transfer its weight to that node, then the remain value will send to the expensive node, 
+3. select 1 receive node and sum total weight inflow. go to step 2 , repeat until all nodes are selected.
+

@@ -15,7 +15,7 @@
 #         print(m_num_of_nodes,[i],selected_nodes)
 
 # print(selected_nodes)
-# result = [[0 for column in range(m_num_of_nodes)] 
+# result = [[0 for column in range(m_num_of_nodes)]
 #                     for row in range(m_num_of_nodes)]
 # print(result)
 
@@ -38,31 +38,47 @@
 #         [0,2],
 #         [1,2],
 #         [1,3]]
-list = []
-print(list)
-i = 0
-def add_edge(node1, node2, weight):
-        global i
-        node = node1 , node2
-        list.insert(i,node)
-        # list.insert(i,node2)
-        i += 1
+# node and its network
+list1 = []
+# value of node by index
+list2 = []
+# store value to node
+list3={
 
-add_edge(0, 1, 4)
-add_edge(1, 0, 4)
-add_edge(0, 2, 7)
-add_edge(1, 2, 11)
-add_edge(1, 3, 9)
-add_edge(1, 5, 20)
-add_edge(2, 5, 1)
-add_edge(3, 6, 6)
-add_edge(3, 4, 2)
-add_edge(4, 6, 10)
-add_edge(4, 8, 15)
-add_edge(4, 7, 5)
-add_edge(4, 5, 1)
-add_edge(5, 7, 3)
-add_edge(6, 8, 5)
-add_edge(7, 8, 12)
-print(list)
-print(list[5][1])
+}
+
+i = 0
+
+
+def add_edge(node1, node2, weight):
+    global i
+    node = node1, node2
+    list1.insert(i, node)
+    list2.insert(i, weight)
+    # list.insert(i,node2)
+    i += 1
+
+
+add_edge(0, 1, 6)
+add_edge(0, 2, 4)
+add_edge(1, 3, 3)
+add_edge(1, 4, 2)
+add_edge(2, 3, 2)
+add_edge(2, 4, 5)
+add_edge(3, 5, 6)
+add_edge(4, 5, 4)
+
+print(list1)
+# print(list1[5])
+print(list2)
+first = 10
+for a in range(0, len(list1)):
+        # for b in range(0, 2):
+                if list1[a][0] == 0:
+                        # connect
+                        print(list1[a], list2[a])
+                        # print(list1[a][1], "= " , list2[a])
+                        list3[list1[a][1]] = list2[a]
+                        
+print(list3)
+                        

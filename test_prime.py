@@ -43,9 +43,7 @@ list1 = []
 # value of node by index
 list2 = []
 # store value to node
-list3={
-
-}
+list3={}
 
 i = 0
 
@@ -73,12 +71,21 @@ print(list1)
 print(list2)
 first = 10
 for a in range(0, len(list1)):
-        # for b in range(0, 2):
+        #for b in range(0, len(list1)):
+        #for b in range(0, 2):
+        
                 if list1[a][0] == 0:
-                        # connect
-                        print(list1[a], list2[a])
-                        # print(list1[a][1], "= " , list2[a])
+                        # print node list and its value
+                        print(list1[a], "= " , list2[a])
+                        # assign the end node and the value to dictionary
                         list3[list1[a][1]] = list2[a]
-                        
+                                
 print(list3)
+
+# end start node
+# begin normal node
+
+# for a in range(1, 5):
+#         print(list3[a])
+
                         

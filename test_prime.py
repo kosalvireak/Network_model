@@ -45,6 +45,7 @@ list2 = []
 # store value to node
 list3={}
 
+# create a value in and value out for comparison
 i = 0
 
 
@@ -61,7 +62,7 @@ add_edge(0, 1, 6)
 add_edge(0, 2, 4)
 add_edge(1, 3, 3)
 add_edge(1, 4, 2)
-add_edge(2, 3, 2)
+add_edge(2, 3, 2)    
 add_edge(2, 4, 5)
 add_edge(3, 5, 6)
 add_edge(4, 5, 4)
@@ -77,15 +78,31 @@ for a in range(0, len(list1)):
                 if list1[a][0] == 0:
                         # print node list and its value
                         print(list1[a], "= " , list2[a])
+                        
                         # assign the end node and the value to dictionary
                         list3[list1[a][1]] = list2[a]
                                 
 print(list3)
+print("----------")
 
 # end start node
 # begin normal node
+node3 = 0
+node4 = 0
+for a in range(0, len(list1)):
+        for b in range(1, 3):
+        
+                if list1[a][0] == b:
+                        # print node list and its value
+                        print(list1[a], "= " , list2[a])
+                        if list1[a][1] == 3:
+                                node3 += list2[a]
+                                list3[list1[a][1]] = node3
+                        if list1[a][1] == 4:
+                                node4 += list2[a]
+                                list3[list1[a][1]] = node4
 
-# for a in range(1, 5):
-#         print(list3[a])
+                        
+print(list3)
 
                         

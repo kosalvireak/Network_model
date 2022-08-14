@@ -63,7 +63,7 @@ while i < 10:
                                 
                                 print(list1[a][1]," = ",min)
                                 # add receive node and its value to list 3
-                                #no += list2[a]
+                                # no += list2[a]
                                 list3[list1[a][1]] = list2[a]
                                 
 

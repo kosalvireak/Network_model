@@ -57,3 +57,27 @@ for nod in nodes:
         if list_of_network[i][0] == nod:
             list_of_new[list_of_network[i][1]] = list_of_weight[i]
 print(list_of_new)
+
+
+for nod in nodes:
+    temp_list ={}
+    out1 = 0
+    out2 = 0
+    max = 500
+    for i in range (len(list_of_network)):
+        if list_of_network[i][0] == 1:
+            out1 = list_of_network[i][1]
+            out2 = list_of_weight[i]
+            if out2 < max:
+                max = out2
+            temp_list[out1] = out2
+
+
+
+            temp_list[out1] = out2
+            
+
+print("------------------")
+print(temp_list)
+
+        

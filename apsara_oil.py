@@ -4,6 +4,8 @@ list_of_network = []
 list_of_weight = []
 # store value to node
 list3={}
+# all node 
+nodes = []
 
 # create a value in and value out for comparison
 i = 0
@@ -14,6 +16,10 @@ def add_edge(node1, node2, weight):
     node = node1, node2
     list_of_network.insert(i, node)
     list_of_weight.insert(i, weight)
+    if node1 not in nodes:
+        nodes.append(node1)
+    if node2 not in nodes:
+        nodes.append(node2)
     # list.insert(i,node2)
     i += 1
 
@@ -29,3 +35,4 @@ add_edge(4, 5, 4)
 
 print(list_of_network)
 print(list_of_weight)
+print(nodes)

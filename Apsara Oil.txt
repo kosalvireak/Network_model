@@ -31,4 +31,8 @@ Algorithm for Apsara Oil.
 dic = {1:5, 2:6}
 n = 20
 dic.update({1:n})
-{1: 20, 2: 6}
+>>>{1: 20, 2: 6}
+-----
+m = dic[1] + 50
+dic.update({1:m})
+>>>{1: 70, 2: 6}

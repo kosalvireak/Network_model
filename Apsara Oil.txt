@@ -26,5 +26,9 @@ Algorithm for Apsara Oil.
 3. select 1 receive node and sum total weight inflow. go to step 2 , repeat until all nodes are selected.
 
 ----------------------------
-2 round / Part B
+2 round / Part B            
 ----------------------------
+dic = {1:5, 2:6}
+n = 20
+dic.update({1:n})
+{1: 20, 2: 6}

@@ -66,7 +66,7 @@ for nod in nodes:
     max = 500
     min = 100
     for i in range (len(list_of_network)):
-        if list_of_network[i][0] == 1: ### send node will change to nod
+        if list_of_network[i][0] == nod: ### send node will change to nod
             out1 = list_of_network[i][1]
             out2 = list_of_weight[i]
             if out2 < max:
@@ -92,7 +92,7 @@ for nod in nodes:
     
     
 # reduce send node by what has been sent
-    list_of_new.update({1-1:}) 
+    list_of_new.update({nod:3}) 
     key2 = keys_list[key2]
     list_of_new.update({key2:min})
 

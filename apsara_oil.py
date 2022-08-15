@@ -71,10 +71,8 @@ for nod in nodes:
             if out2 < max:
                 max = out2
             temp_list[out1] = out2
-
-
-
-            temp_list[out1] = out2
+    
+    
             
 
 print("------------------")

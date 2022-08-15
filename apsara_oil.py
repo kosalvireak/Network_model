@@ -56,7 +56,7 @@ for nod in nodes:
     for i in range (len(list_of_network)):
         if list_of_network[i][0] == nod:
             list_of_new[list_of_network[i][1]] = list_of_weight[i]
-print(list_of_new)
+print('old list',list_of_new)
 
 
 for nod in nodes:
@@ -64,6 +64,7 @@ for nod in nodes:
     out1 = 0
     out2 = 0
     max = 500
+    min = 100
     for i in range (len(list_of_network)):
         if list_of_network[i][0] == 1:
             out1 = list_of_network[i][1]
@@ -71,11 +72,30 @@ for nod in nodes:
             if out2 < max:
                 max = out2
             temp_list[out1] = out2
-    
-    
-            
-
-print("------------------")
-print(temp_list)
-
+    i = 0
+    key = 0
+    while i < len(temp_list):
+        first_value = list(temp_list.values())[i]
+        if first_value < min:
+            min = first_value
+            key = i
+        i += 1
         
+    #small = temp_list[key]
+    list_of_new.update({4:min})
+
+print('new list',list_of_new)    
+print("key",key)
+print("----------------------------")
+print('temp list',temp_list)
+print("----------------------------")
+print("min",min)
+
+# i = 0
+# while i < len(temp_list):
+#     first_value = list(temp_list.values())[i]
+#     if first_value < min:
+#         min = first_value
+#     i += 1
+# print(min)
+    

@@ -82,7 +82,10 @@ for nod in nodes:
         i += 1
         
     #small = temp_list[key]
-    list_of_new.update({4:min})
+    # get key of temp list by its index
+    keys_list = list(temp_list)
+    keys = keys_list[0]
+    list_of_new.update({keys:min})
 
 print('new list',list_of_new)    
 print("key",key)

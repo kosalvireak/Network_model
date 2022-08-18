@@ -119,6 +119,7 @@ class Graph:
 				total += flow
 
 		# return maximum flow
+		print(start)
 		return total
 
 

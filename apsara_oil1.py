@@ -46,29 +46,33 @@ for a in range(0, len(list1)):
 print(list3)
 print("----------")
 i = 0
-while i < 10:
+while i < 7:
         i += 1
-        # end start node
-        # begin normal node
-        no = 0
-        node4 = 0
-        min = 99999
-        for a in range(0, len(list1)):
-                        # we choose the send node 
-                        if list1[a][1] == i:
-                                # print node list and its value
-                                print(list1[a], "= " , list2[a])
-                                if list2[a] < min:
-                                        min = list2[a]
+        #print(list1)
+        #[(0, 1), (0, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 5), (4, 5)] 
+        if list1[i][0] == :
+                print(list1[i][1])
+        # # end start node
+        # # begin normal node
+        # no = 0
+        # node4 = 0
+        # min = 99999
+        # for a in range(0, len(list1)):
+        #                 # we choose the send node 
+        #                 if list1[a][1] == i:
+        #                         # print node list and its value
+        #                         print(list1[a], "= " , list2[a])
+        #                         if list2[a] < min:
+        #                                 min = list2[a]
                                 
-                                print(list1[a][1]," = ",min)
-                                # add receive node and its value to list 3
-                                # no += list2[a]
-                                list3[list1[a][1]] = list2[a]
+        #                         print(list1[a][1]," = ",min)
+        #                         # add receive node and its value to list 3
+        #                         # no += list2[a]
+        #                         list3[list1[a][1]] = list2[a]
                                 
 
                                 
                                 
-print(list3)
+        
 
                         

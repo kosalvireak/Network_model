@@ -29,29 +29,36 @@ add_edge(3, 5, 6)
 add_edge(4, 5, 4)
 
 print(list1)
-# print(list1[5])
 print(list2)
 first = 10
 for a in range(0, len(list1)):
-        #for b in range(0, len(list1)):
-        #for b in range(0, 2):
-        
                 if list1[a][0] == 0:
-                        # print node list and its value
                         print(list1[a], "= " , list2[a])
-                        
-                        # assign the end node and the value to dictionary
                         list3[list1[a][1]] = list2[a]
                                 
 print(list3)
 print("----------")
-i = 0
-while i < 7:
-        i += 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# i = 0
+# while i < 7:
+#         i += 1
         #print(list1)
         #[(0, 1), (0, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 5), (4, 5)] 
-        if list1[i][0] == :
-                print(list1[i][1])
+        # if list1[i][0] == :
+        #         print(list1[i][1])
         # # end start node
         # # begin normal node
         # no = 0

@@ -1,29 +1,5 @@
-Algorithm                                                   Test
+create a 2d list to store the final value of each node
 
-Create a list of nodes and arcs.                            0>1 = 6, 0>4 = 4, 1>3 = 3....3>5 = 6, 4>5 = 4
-For start node connect to all the connected node.           0-1 and 0-2
-Send all the value in, assign value to that nodes           node1 = 6, node2 = 4
-Then for normal node,                                       1,2,3 & 4
-    compare value out 1 and value out 2                     For node1, value = 6, value out 3+2 = 5    
-    send the smaller one to connected nodes.                Since value out = 5 , send 5 to connected node node3 & node4
-    For connected nodes, the small one get value first      node3 > node 4 | 3>2, thus value in is 2 and will assign to node 4
-    The big one get remain value                            remain value = value node1 - value node4 = 5 - 2 = 3, assign 3 to node3 
-    
-                                                            For node2, value = 4, value out 5+2 = 7    
-                                                            Since value out = 7 , send 4 to connected node node3 & node4
-                                                            node4 > node 2 | 5>2, thus value in is 2 and will assign to node 3
-                                                            remain value = value node2 - value node3 = 2 - 2 = 2, assign 2 to node3 
-           
-sum the received value for the 3rd and 4th node             node3 = 3 + 2 = 5
-                                                            node4 = 2 + 2 = 4
-    send to the end node and sum, assign sum to node5       3>5 = 5 , 4>5 = 4 node5 = 5 + 9
-    return the sum of end node                              node5 = 9              
-
-
-Algorithm for Apsara Oil.
-1. start from the first node
-2. connect to the cheapest node first and transfer its weight to that node, then the remain value will send to the expensive node, 
-3. select 1 receive node and sum total weight inflow. go to step 2 , repeat until all nodes are selected.
 
 ----------------------------
 2 round / Part B            

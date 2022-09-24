@@ -1,21 +1,20 @@
-list_node = [0, 1, 2, 3, 4, 5]
-print("list_node", list_node)
+
 # node and its network
 list_network = []
 # value of node by index
 list_weight = []
 # store value to node
-
+success_dic = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
 list0 = {}
-list_list0=[]
+list_list0 = []
 list1 = {}
-list_list1=[]
+list_list1 = []
 list2 = {}
-list_list2=[]
+list_list2 = []
 list3 = {}
-list_list3=[]
+list_list3 = []
 list4 = {}
-list_list4=[]
+list_list4 = []
 
 # create a value in and value out for comparison
 i = 0
@@ -43,47 +42,59 @@ print("list_network", list_network)
 print("list_weight", list_weight)
 for a in range(0, len(list_network)):
     if list_network[a][0] == 0:
-        list_list0.insert(a,list_weight[a])
+        list_list0.insert(a, list_weight[a])
         # list_list0.insert([a][1],list_weight[a])
 
         #print(list_network[a], "= " , list_weight[a])
         list0[list_network[a][1]] = list_weight[a]
+
     elif list_network[a][0] == 1:
-        
-        list_list1.insert(a,list_weight[a])
+
+        list_list1.insert(a, list_weight[a])
 
         #print(list_network[a], "= " , list_weight[a])
         list1[list_network[a][1]] = list_weight[a]
     elif list_network[a][0] == 2:
-        
-        list_list2.insert(a,list_weight[a])
+
+        list_list2.insert(a, list_weight[a])
 
         #print(list_network[a], "= " , list_weight[a])
         list2[list_network[a][1]] = list_weight[a]
     elif list_network[a][0] == 3:
-        
-        list_list3.insert(a,list_weight[a])
+
+        list_list3.insert(a, list_weight[a])
 
         #print(list_network[a], "= " , list_weight[a])
         list3[list_network[a][1]] = list_weight[a]
     elif list_network[a][0] == 4:
-        
-        list_list4.insert(a,list_weight[a])
+
+        list_list4.insert(a, list_weight[a])
 
         #print(list_network[a], "= " , list_weight[a])
         list4[list_network[a][1]] = list_weight[a]
-
+print("success_dic", success_dic)
 print("list0", list0)
-print("list_list0",list_list0)
+print("list_list0", list_list0)
 print("list1", list1)
 print("list2", list2)
-print("list3", list3)
-print("list4", list4)
+# print("list3", list3)
+# print("list4", list4)
 print("----------")
-# print(list_list0,list_list1,list_list2,list_list3,list_list4)
-# print(list(list0)[0])
-# print(list0[1])
-#print(list(list0)[0][0])
+
+
+a = success_dic[1] + 6
+success_dic.update({1:a})
+b = success_dic[2] + 4
+success_dic.update({2:b})
+
+
+
+print("----------")
+
+
+
+
+
 
 if len(list_list1) == 2:
     smallest = 1000
@@ -93,7 +104,7 @@ if len(list_list1) == 2:
         smallest = a0
     if smallest > a1:
         smallest = a1
-    
+
     print(list_list1)
     print(smallest)
 
@@ -101,21 +112,9 @@ if len(list_list1) == 2:
         print(list(list1)[0])
     elif  list(list1)[1] == smallest:
         print(list(list1)[1])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+c = success_dic[3] + smallest
+success_dic.update({3:c})
+print(success_dic)
 
 # i = 0
 # while i < 7:

@@ -9,9 +9,13 @@ list_weight = []
 list0 = {}
 list_list0=[]
 list1 = {}
+list_list1=[]
 list2 = {}
+list_list2=[]
 list3 = {}
+list_list3=[]
 list4 = {}
+list_list4=[]
 
 # create a value in and value out for comparison
 i = 0
@@ -45,18 +49,26 @@ for a in range(0, len(list_network)):
         #print(list_network[a], "= " , list_weight[a])
         list0[list_network[a][1]] = list_weight[a]
     elif list_network[a][0] == 1:
+        
+        list_list1.insert(a,list_weight[a])
 
         #print(list_network[a], "= " , list_weight[a])
         list1[list_network[a][1]] = list_weight[a]
     elif list_network[a][0] == 2:
+        
+        list_list2.insert(a,list_weight[a])
 
         #print(list_network[a], "= " , list_weight[a])
         list2[list_network[a][1]] = list_weight[a]
     elif list_network[a][0] == 3:
+        
+        list_list3.insert(a,list_weight[a])
 
         #print(list_network[a], "= " , list_weight[a])
         list3[list_network[a][1]] = list_weight[a]
     elif list_network[a][0] == 4:
+        
+        list_list4.insert(a,list_weight[a])
 
         #print(list_network[a], "= " , list_weight[a])
         list4[list_network[a][1]] = list_weight[a]
@@ -68,12 +80,27 @@ print("list2", list2)
 print("list3", list3)
 print("list4", list4)
 print("----------")
+# print(list_list0,list_list1,list_list2,list_list3,list_list4)
 # print(list(list0)[0])
 # print(list0[1])
 #print(list(list0)[0][0])
 
-if len(list_list0) == 2:
-    print(list_list0)
+if len(list_list1) == 2:
+    smallest = 1000
+    a0 = list_list1[0]
+    a1 = list_list1[1]
+    if smallest > a0:
+        smallest = a0
+    if smallest > a1:
+        smallest = a1
+    
+    print(list_list1)
+    print(smallest)
+
+    if list(list1)[0] == smallest:
+        print(list(list1)[0])
+    elif  list(list1)[1] == smallest:
+        print(list(list1)[1])
 
 
 

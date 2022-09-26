@@ -83,17 +83,9 @@ print("----------")
 
 
 a = success_dic[1] + 6
-success_dic.update({1:a})
+success_dic.update({1: a})
 b = success_dic[2] + 4
-success_dic.update({2:b})
-
-
-
-print("----------")
-
-
-
-
+success_dic.update({2: b})
 
 
 if len(list_list1) == 2:
@@ -110,10 +102,10 @@ if len(list_list1) == 2:
 
     if list(list1)[0] == smallest:
         print(list(list1)[0])
-    elif  list(list1)[1] == smallest:
+    elif list(list1)[1] == smallest:
         print(list(list1)[1])
 c = success_dic[3] + smallest
-success_dic.update({3:c})
+success_dic.update({3: c})
 print(success_dic)
 
 # i = 0
@@ -140,3 +132,5 @@ print(success_dic)
 #                         # add receive node and its value to list 3
 #                         # no += list_weight[a]
 #                         list3[list_network[a][1]] = list_weight[a]
+
+print("----------------")

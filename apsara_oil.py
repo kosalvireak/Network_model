@@ -85,16 +85,16 @@ for nod in nodes:
         i += 1
         
     #small = temp_list[key]
-    # get key of temp list by its index
-    keys_list = list(temp_list)
-    keys = keys_list[key]
-    list_of_new.update({keys:min})
+    # # get key of temp list by its index
+    # keys_list = list(temp_list)
+    # keys = keys_list[key]
+    # list_of_new.update({keys:min})
     
     
-# reduce send node by what has been sent
-    list_of_new.update({nod:3}) 
-    key2 = keys_list[key2]
-    list_of_new.update({key2:min})
+# # reduce send node by what has been sent
+#     list_of_new.update({nod:3}) 
+#     key2 = keys_list[key2]
+#     list_of_new.update({key2:min})
 
 print('new list',list_of_new)    
 print("key",key)

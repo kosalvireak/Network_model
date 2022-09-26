@@ -55,16 +55,6 @@ class Graph:
 		# return False else True
 		return False if self.level[t] < 0 else True
 
-# A DFS based function to send flow after BFS has
-# figured out that there is a possible flow and
-# constructed levels. This functions called multiple
-# times for a single call of BFS.
-# flow : Current flow send by parent function call
-# start[] : To keep track of next edge to be explored
-#		 start[i] stores count of edges explored
-#		 from i
-# u : Current vertex
-# t : Sink
 	def sendFlow(self, u, flow, t, start):
 		# Sink reached
 		if u == t:

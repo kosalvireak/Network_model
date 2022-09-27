@@ -1,6 +1,4 @@
 # node and its network + weight
-Final_node = 0
-
 Network = []
 # store new value to node
 success_dic = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
@@ -8,16 +6,18 @@ success_dic = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
 Node = []
 # weight
 list_of_weight = []
+# receive node
+Receive_node = 5
 
 
 def add_edge(node1, node2, weight):
     node = node1, node2, weight
     # add node and its network
     Network.append(node)
+    # we don't include start node which is node 0
     if node1 != 0:
         if node1 not in Node:
             Node.append(node1)
-    list_of_weight.append(weight)
 
 
 add_edge(0, 1, 6)
@@ -30,7 +30,7 @@ add_edge(3, 5, 6)
 add_edge(4, 5, 4)
 
 
-# --> auto add key from above function to success_dic
+# --> a code to auto add key from above function to success_dic EX: 1:0, 2:0
 
 
 print("Node", Node)
@@ -47,8 +47,6 @@ for i in range(len(Network)):
 print("success_dic", success_dic)
 
 
-# --> need a big loop
-
 for m in Node:
     print("------------")
     print(m)
@@ -64,8 +62,7 @@ for m in Node:
 
     if len(temp_list) == 2:
         # Compare 3rd elements of both
-        smallest = 100
-        biggest = 0
+        
         if temp_list[0][2] < temp_list[1][2]:
             smallest = temp_list[0][2]
             smallest_key = temp_list[0][1]
@@ -76,8 +73,6 @@ for m in Node:
             smallest_key = temp_list[1][1]
             biggest = temp_list[0][2]
             biggest_key = temp_list[0][1]
-        # print(smallest,">",smallest_key)
-        # print(biggest,">",biggest_key)
 
         # assign smallest to success_dic
         success_dic[smallest_key] += smallest
@@ -105,4 +100,4 @@ for m in Node:
 
 
 print("============")
-print(success_dic[5])
+print(success_dic[Receive_node])

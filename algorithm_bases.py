@@ -1,4 +1,7 @@
 # node and its network + weight
+import tempfile
+
+
 Network = []
 # store new value to node
 success_dic = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
@@ -48,7 +51,7 @@ print("success_dic", success_dic)
 
 # --> need a big loop
 
-for m in range(1, 3):
+for m in range(1, 5):
     print("------------")
     print(m)
     print("------------")
@@ -58,40 +61,52 @@ for m in range(1, 3):
         if Network[i][0] == m:
             node = Network[i][0], Network[i][1], Network[i][2]
             temp_list.append(node)
-        # clear temp_list
-        # temp_list.clear()
+        
     print("temp_list", temp_list)
 
-    # This is for temp_dic if it equal = 2
-    # Compare 3rd elements of both
-    smallest = 100
-    biggest = 0
-    if temp_list[0][2] < temp_list[1][2]:
-        smallest = temp_list[0][2]
-        smallest_key = temp_list[0][1]
-        biggest = temp_list[1][2]
-        biggest_key = temp_list[1][1]
-    elif temp_list[1][2] < temp_list[0][2]:
-        smallest = temp_list[1][2]
-        smallest_key = temp_list[1][1]
-        biggest = temp_list[0][2]
-        biggest_key = temp_list[0][1]
-    print(smallest,">",smallest_key)
-    print(biggest,">",biggest_key)
+    if len(temp_list) == 2:
+        # Compare 3rd elements of both
+        smallest = 100
+        biggest = 0
+        if temp_list[0][2] < temp_list[1][2]:
+            smallest = temp_list[0][2]
+            smallest_key = temp_list[0][1]
+            biggest = temp_list[1][2]
+            biggest_key = temp_list[1][1]
+        elif temp_list[1][2] < temp_list[0][2]:
+            smallest = temp_list[1][2]
+            smallest_key = temp_list[1][1]
+            biggest = temp_list[0][2]
+            biggest_key = temp_list[0][1]
+        # print(smallest,">",smallest_key)
+        # print(biggest,">",biggest_key)
 
-    # assign smallest to success_dic
-    success_dic[smallest_key] += smallest
-    success_dic[temp_list[0][0]] = success_dic[temp_list[0][0]] - smallest
+        # assign smallest to success_dic
+        success_dic[smallest_key] += smallest
+        success_dic[temp_list[0][0]] = success_dic[temp_list[0][0]] - smallest
 
-    # Compare its weight and the value of nod (1,3,3) weight is 3 and value of nod is 4
-    if biggest < success_dic[temp_list[0][0]]:
-        success_dic[biggest_key] += biggest
-        success_dic[temp_list[0][0]] = success_dic[temp_list[0][0]] - biggest
-    elif biggest > success_dic[temp_list[0][0]]:
-        success_dic[biggest_key] += success_dic[temp_list[0][0]]
+        # Compare its weight and the value of nod (1,3,3) weight is 3 and value of nod is 4
+        if biggest < success_dic[temp_list[0][0]]:
+            success_dic[biggest_key] += biggest
+            success_dic[temp_list[0][0]] = success_dic[temp_list[0][0]] - biggest
+        elif biggest > success_dic[temp_list[0][0]]:
+            success_dic[biggest_key] += success_dic[temp_list[0][0]]
 
-        success_dic[temp_list[0][0]] -= success_dic[temp_list[0][0]]
-
+            success_dic[temp_list[0][0]] -= success_dic[temp_list[0][0]]
+        # clear temp_list
+        temp_list.clear()
     print(success_dic)
+
+    
+    if len(temp_list) == 1:
+        print(temp_list)
+        if temp_list[0][2] > success_dic[temp_list[0][0]]:
+            success_dic[temp_list[0][2]] += temp_list[0][2]
+        elif temp_list[0][2] < success_dic[temp_list[0][0]]:
+            success_dic[temp_list[0][2]] += success_dic[temp_list[0][2]]
+
+
+
+
 print("============")
 print(success_dic)

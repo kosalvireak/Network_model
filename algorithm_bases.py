@@ -28,7 +28,8 @@ add_edge(3, 5, 6)
 add_edge(4, 5, 4)
 
 
-# auto add key from above function to success_dic
+# --> auto add key from above function to success_dic
+
 
 print("Node", Node)
 print("Network", Network)
@@ -36,7 +37,6 @@ print("success_dic", success_dic)
 print("------------")
 
 # Assign value to node that receive from node0
-
 for i in range(len(Network)):
     if Network[i][0] == 0:
         # get its node
@@ -47,16 +47,37 @@ for i in range(len(Network)):
 print("success_dic", success_dic)
 temp_list = []
 
+
+# --> need a big loop
+
+
 for i in range(len(Network)):
     # Assign Network to temp list
     if Network[i][0] == 1:
         node = Network[i][0], Network[i][1], Network[i][2]
         temp_list.append(node)
-
-    # This is for temp_dic if it equal = 2
-    # Compare 3rd elements of both
-    smallest = 100
-    if temp_list[]
     # clear temp_list
     # temp_list.clear()
 print(temp_list)
+
+# This is for temp_dic if it equal = 2
+# Compare 3rd elements of both
+smallest = 100
+biggest = 0
+if temp_list[0][2] < temp_list[1][2]:
+    smallest = temp_list[0][2] 
+    smallest_key = temp_list[0][1]
+    biggest = temp_list[1][2]
+    biggest_key = temp_list[1][1]
+elif temp_list[1][2] < temp_list[0][2]:
+    smallest = temp_list[1][2]
+    smallest_key = temp_list[1][1]
+    biggest = temp_list[0][2]
+    biggest_key = temp_list[0][1]
+print(smallest,smallest_key)
+print(biggest,biggest_key)
+
+# assign smallest to success_dic
+success_dic[smallest_key] = smallest
+
+print(success_dic)

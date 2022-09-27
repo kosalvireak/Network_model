@@ -1,6 +1,5 @@
 # node and its network + weight
-import tempfile
-
+Final_node = 0
 
 Network = []
 # store new value to node
@@ -48,10 +47,9 @@ for i in range(len(Network)):
 print("success_dic", success_dic)
 
 
-
 # --> need a big loop
 
-for m in range(1, 5):
+for m in Node:
     print("------------")
     print(m)
     print("------------")
@@ -61,7 +59,7 @@ for m in range(1, 5):
         if Network[i][0] == m:
             node = Network[i][0], Network[i][1], Network[i][2]
             temp_list.append(node)
-        
+
     print("temp_list", temp_list)
 
     if len(temp_list) == 2:
@@ -88,7 +86,8 @@ for m in range(1, 5):
         # Compare its weight and the value of nod (1,3,3) weight is 3 and value of nod is 4
         if biggest < success_dic[temp_list[0][0]]:
             success_dic[biggest_key] += biggest
-            success_dic[temp_list[0][0]] = success_dic[temp_list[0][0]] - biggest
+            success_dic[temp_list[0][0]
+                        ] = success_dic[temp_list[0][0]] - biggest
         elif biggest > success_dic[temp_list[0][0]]:
             success_dic[biggest_key] += success_dic[temp_list[0][0]]
 
@@ -97,16 +96,13 @@ for m in range(1, 5):
         temp_list.clear()
     print(success_dic)
 
-    
     if len(temp_list) == 1:
-        print(temp_list)
-        if temp_list[0][2] > success_dic[temp_list[0][0]]:
-            success_dic[temp_list[0][2]] += temp_list[0][2]
-        elif temp_list[0][2] < success_dic[temp_list[0][0]]:
-            success_dic[temp_list[0][2]] += success_dic[temp_list[0][2]]
 
-
+        if temp_list[0][2] >= success_dic[temp_list[0][0]]:
+            success_dic[temp_list[0][1]] += success_dic[temp_list[0][0]]
+        elif temp_list[0][2] <= success_dic[temp_list[0][0]]:
+            success_dic[temp_list[0][1]] += temp_list[0][2]
 
 
 print("============")
-print(success_dic)
+print(success_dic[5])

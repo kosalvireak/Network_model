@@ -76,11 +76,11 @@ for m in range(1, 3):
         smallest_key = temp_list[1][1]
         biggest = temp_list[0][2]
         biggest_key = temp_list[0][1]
-    # print(smallest,smallest_key)
-    # print(biggest,biggest_key)
+    print(smallest,">",smallest_key)
+    print(biggest,">",biggest_key)
 
     # assign smallest to success_dic
-    success_dic[smallest_key] = smallest
+    success_dic[smallest_key] += smallest
     success_dic[temp_list[0][0]] = success_dic[temp_list[0][0]] - smallest
 
     # Compare its weight and the value of nod (1,3,3) weight is 3 and value of nod is 4

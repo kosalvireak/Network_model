@@ -1,1 +1,1 @@
-6
+list_of_weight

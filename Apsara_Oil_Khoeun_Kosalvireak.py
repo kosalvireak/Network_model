@@ -33,8 +33,8 @@ add_edge(4, 5, 4)
 # --> a code to auto add key from above function to success_dic EX: 1:0, 2:0
 
 
-print("Node", Node)
-print("Network", Network)
+#print("Node", Node)
+#print("Network", Network)
 
 # Assign value to node that receive from node0
 for i in range(len(Network)):
@@ -44,13 +44,13 @@ for i in range(len(Network)):
         # get its weight
         new_value = Network[i][2]
         success_dic[new_node] = new_value
-print("success_dic", success_dic)
+#print("success_dic", success_dic)
 
 
 for m in Node:
-    print("------------")
-    print(m)
-    print("------------")
+    # print("------------")
+    # print(m)
+    # print("------------")
     temp_list = []
     for i in range(len(Network)):
         # Assign Network to temp list
@@ -58,11 +58,11 @@ for m in Node:
             node = Network[i][0], Network[i][1], Network[i][2]
             temp_list.append(node)
 
-    print("temp_list", temp_list)
+    #print("temp_list", temp_list)
 
     if len(temp_list) == 2:
         # Compare 3rd elements of both
-        
+
         if temp_list[0][2] < temp_list[1][2]:
             smallest = temp_list[0][2]
             smallest_key = temp_list[0][1]
@@ -89,7 +89,7 @@ for m in Node:
             success_dic[temp_list[0][0]] -= success_dic[temp_list[0][0]]
         # clear temp_list
         temp_list.clear()
-    print(success_dic)
+    # print(success_dic)
 
     if len(temp_list) == 1:
 
@@ -99,5 +99,4 @@ for m in Node:
             success_dic[temp_list[0][1]] += temp_list[0][2]
 
 
-print("============")
-print(success_dic[Receive_node])
+print("Final node get: ",success_dic[Receive_node])

@@ -22,20 +22,18 @@ def add_edge(node1, node2, weight):
     if node1 != 0:
         if node1 not in Node:
             Node.append(node1)
-    
 
 
+add_edge(0, 1, 6) # 6
+add_edge(0, 2, 4) # 4
+add_edge(1, 3, 3) # 3
+add_edge(1, 4, 2) # 2
+add_edge(2, 3, 2) # 2
+add_edge(2, 4, 5) # 5
+add_edge(3, 5, 6) # 6
+add_edge(4, 5, 4) # 4
+Receive_node = 5
 
-add_edge(0, 1, 6)
-add_edge(0, 2, 4)
-add_edge(1, 3, 3)
-add_edge(1, 4, 2)
-add_edge(2, 3, 2)
-add_edge(2, 4, 5)
-add_edge(3, 5, 6)
-add_edge(4, 5, 4)
-
-print(success_dic)
 # --> a code to auto add key from above function to success_dic EX: 1:0, 2:0 // Line 14-17
 
 
@@ -69,12 +67,12 @@ for m in Node:
     if len(temp_list) == 2:
         # Compare 3rd elements of both
 
-        if temp_list[0][2] < temp_list[1][2]:
+        if temp_list[0][2] <= temp_list[1][2]:
             smallest = temp_list[0][2]
             smallest_key = temp_list[0][1]
             biggest = temp_list[1][2]
             biggest_key = temp_list[1][1]
-        elif temp_list[1][2] < temp_list[0][2]:
+        elif temp_list[0][2] >= temp_list[1][2]:
             smallest = temp_list[1][2]
             smallest_key = temp_list[1][1]
             biggest = temp_list[0][2]
@@ -85,11 +83,11 @@ for m in Node:
         success_dic[temp_list[0][0]] = success_dic[temp_list[0][0]] - smallest
 
         # Compare its weight and the value of nod (1,3,3) weight is 3 and value of nod is 4
-        if biggest < success_dic[temp_list[0][0]]:
+        if biggest <= success_dic[temp_list[0][0]]:
             success_dic[biggest_key] += biggest
             success_dic[temp_list[0][0]
                         ] = success_dic[temp_list[0][0]] - biggest
-        elif biggest > success_dic[temp_list[0][0]]:
+        elif biggest >= success_dic[temp_list[0][0]]:
             success_dic[biggest_key] += success_dic[temp_list[0][0]]
 
             success_dic[temp_list[0][0]] -= success_dic[temp_list[0][0]]
@@ -98,15 +96,17 @@ for m in Node:
     # print(success_dic)
 
     if len(temp_list) == 1:
-        send_key = temp_list[0][0]
+
+        send_node = temp_list[0][0]
 
         if temp_list[0][2] >= success_dic[temp_list[0][0]]:
             success_dic[temp_list[0][1]] += success_dic[temp_list[0][0]]
             # reduce value of send node
-            success_dic[send_key] -= success_dic[temp_list[0][0]]
+            success_dic[send_node] -= success_dic[temp_list[0][0]]
         elif temp_list[0][2] <= success_dic[temp_list[0][0]]:
             success_dic[temp_list[0][1]] += temp_list[0][2]
-            success_dic[send_key] -= temp_list[0][2]
+            # reduce value of send node
+            success_dic[send_node] -= temp_list[0][2]
 
 print(success_dic)
-print("Final node get: ",success_dic[Receive_node])
+print("Final node get: ", success_dic[Receive_node])

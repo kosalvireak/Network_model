@@ -98,11 +98,15 @@ for m in Node:
     # print(success_dic)
 
     if len(temp_list) == 1:
+        send_key = temp_list[0][0]
 
         if temp_list[0][2] >= success_dic[temp_list[0][0]]:
             success_dic[temp_list[0][1]] += success_dic[temp_list[0][0]]
+            # reduce value of send node
+            success_dic[send_key] -= success_dic[temp_list[0][0]]
         elif temp_list[0][2] <= success_dic[temp_list[0][0]]:
             success_dic[temp_list[0][1]] += temp_list[0][2]
+            success_dic[send_key] -= temp_list[0][2]
 
 print(success_dic)
 print("Final node get: ",success_dic[Receive_node])

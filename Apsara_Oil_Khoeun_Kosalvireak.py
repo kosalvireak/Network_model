@@ -1,7 +1,7 @@
 # node and its network + weight
 Network = []
 # store new value to node
-success_dic = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
+success_dic = {}
 # all node
 Node = []
 # weight
@@ -11,6 +11,10 @@ Receive_node = 5
 
 
 def add_edge(node1, node2, weight):
+    # auto add node to success_dic
+    success_dic[node1] = 0
+    if node2 not in Node:
+        success_dic[node2] = 0
     node = node1, node2, weight
     # add node and its network
     Network.append(node)
@@ -18,6 +22,8 @@ def add_edge(node1, node2, weight):
     if node1 != 0:
         if node1 not in Node:
             Node.append(node1)
+    
+
 
 
 add_edge(0, 1, 6)
@@ -29,8 +35,8 @@ add_edge(2, 4, 5)
 add_edge(3, 5, 6)
 add_edge(4, 5, 4)
 
-
-# --> a code to auto add key from above function to success_dic EX: 1:0, 2:0
+print(success_dic)
+# --> a code to auto add key from above function to success_dic EX: 1:0, 2:0 // Line 14-17
 
 
 #print("Node", Node)
@@ -98,5 +104,5 @@ for m in Node:
         elif temp_list[0][2] <= success_dic[temp_list[0][0]]:
             success_dic[temp_list[0][1]] += temp_list[0][2]
 
-
+print(success_dic)
 print("Final node get: ",success_dic[Receive_node])

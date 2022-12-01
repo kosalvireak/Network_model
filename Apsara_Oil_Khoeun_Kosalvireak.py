@@ -10,7 +10,50 @@ list_of_weight = []
 Receive_node = 5
 
 
-def add_edge(node1, node2, weight):
+# def add_edge(node1, node2, weight):
+#     # auto add node to success_dic
+#     success_dic[node1] = 0
+#     if node2 not in Node:
+#         success_dic[node2] = 0
+#     node = node1, node2, weight
+#     # add node and its network
+#     Network.append(node)
+#     # we don't include start node which is node 0
+#     if node1 != 0:
+#         if node1 not in Node:
+#             Node.append(node1)
+
+
+# add_edge(0, 1, 6)  # 6
+# add_edge(0, 2, 4)  # 4
+# add_edge(1, 3, 3)  # 3
+# add_edge(1, 4, 2)  # 2
+# add_edge(2, 3, 2)  # 2
+# add_edge(2, 4, 5)  # 5
+# add_edge(3, 5, 6)  # 6
+# add_edge(4, 5, 4)  # 4
+# Receive_node = 5
+
+
+#
+# For part D, have the user input each pipe's flow data.
+#
+receive = ""
+
+
+def add_edge(node1, node2):
+    global receive
+    if node1 == 0:
+        send = "Oil Field "
+    else:
+        send = "Pumping station " + str(node1)
+    if node2 == 5:
+        receive = "Refinery: "
+    else:
+        receive = "Pumping station " + str(node2)
+    # print(send, "to ", receive)
+    text = send + " to " + receive + ": "
+    weight = int(input(text))
     # auto add node to success_dic
     success_dic[node1] = 0
     if node2 not in Node:
@@ -24,15 +67,24 @@ def add_edge(node1, node2, weight):
             Node.append(node1)
 
 
-add_edge(0, 1, 6) # 6
-add_edge(0, 2, 4) # 4
-add_edge(1, 3, 3) # 3
-add_edge(1, 4, 2) # 2
-add_edge(2, 3, 2) # 2
-add_edge(2, 4, 5) # 5
-add_edge(3, 5, 6) # 6
-add_edge(4, 5, 4) # 4
-Receive_node = 5
+print("Please enter the flow data of each pipe: \n")
+# print("Oil Field to Pumping station 1: ")
+add_edge(0, 1)
+# print("Oil Field to Pumping station 2: ")
+add_edge(0, 2)
+# print("Pumping station 1 to Pumping station 3: ")
+add_edge(1, 3)
+# print("Pumping station 1 to Pumping station 4: ")
+add_edge(1, 4)
+# print("Pumping station 2 to Pumping station 3: ")
+add_edge(2, 3)
+# print("Pumping station 2 to Pumping station 4: ")
+add_edge(2, 4)
+# print("Pumping station 3 to Refinery: ")
+add_edge(3, 5)
+# print("Pumping station 4 to Refinery: ")
+add_edge(4, 5)
+
 
 # --> a code to auto add key from above function to success_dic EX: 1:0, 2:0 // Line 14-17
 
@@ -48,7 +100,9 @@ for i in range(len(Network)):
         # get its weight
         new_value = Network[i][2]
         success_dic[new_node] = new_value
-#print("success_dic", success_dic)
+print("-------------")
+print("success_dic", success_dic)
+print("-------------")
 
 
 for m in Node:

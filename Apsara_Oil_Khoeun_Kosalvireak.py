@@ -9,32 +9,6 @@ list_of_weight = []
 # receive node
 Receive_node = 5
 
-
-# def add_edge(node1, node2, weight):
-#     # auto add node to success_dic
-#     success_dic[node1] = 0
-#     if node2 not in Node:
-#         success_dic[node2] = 0
-#     node = node1, node2, weight
-#     # add node and its network
-#     Network.append(node)
-#     # we don't include start node which is node 0
-#     if node1 != 0:
-#         if node1 not in Node:
-#             Node.append(node1)
-
-
-# add_edge(0, 1, 6)  # 6
-# add_edge(0, 2, 4)  # 4
-# add_edge(1, 3, 3)  # 3
-# add_edge(1, 4, 2)  # 2
-# add_edge(2, 3, 2)  # 2
-# add_edge(2, 4, 5)  # 5
-# add_edge(3, 5, 6)  # 6
-# add_edge(4, 5, 4)  # 4
-# Receive_node = 5
-
-
 #
 # For part D, have the user input each pipe's flow data.
 #
@@ -100,9 +74,9 @@ for i in range(len(Network)):
         # get its weight
         new_value = Network[i][2]
         success_dic[new_node] = new_value
-print("-------------")
-print("success_dic", success_dic)
-print("-------------")
+# print("-------------")
+# print("success_dic", success_dic)
+# print("-------------")
 
 
 for m in Node:
@@ -162,5 +136,10 @@ for m in Node:
             # reduce value of send node
             success_dic[send_node] -= temp_list[0][2]
 
-print(success_dic)
-print("Final node get: ", success_dic[Receive_node])
+# print(success_dic)
+final = "Final node get: "+ str(success_dic[Receive_node])
+print('\x1b[6;30;42m' + str(final) + '\x1b[0m')
+for i in range(Receive_node):
+    if success_dic[i] != 0:
+        print("Pumping station", i, "Still has weight of",
+              success_dic[i], "left")
